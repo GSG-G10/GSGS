@@ -1,0 +1,273 @@
+
+
+.my_profile{
+    width: 80%;
+    margin: 15px auto;
+    }
+  
+  .head_profile {
+  height: 380px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  }
+  
+  .back_img_profile {
+  width: 100%;
+  height: 100%;
+  }
+  
+  .back_img_profile img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  
+object-position: top;
+
+  }
+  
+  .info_front_head {
+  position: absolute;
+  
+  background: linear-gradient(
+    to bottom,
+    rgba(32, 31, 31, 0) 0%,
+    rgb(0, 0, 0) 100%
+  );
+  
+  width: 100%;
+  height: 140px;
+  bottom: 0px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  }
+  
+  ._info_user_profile {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  }
+  
+  .avatar_user {
+  width: 120px;
+  height: 120px;
+  }
+  .avatar_user img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+  border-radius: 50%;
+  border: 5px solid var(--event);
+  object-fit: cover;
+  
+  cursor: pointer;
+  }
+  
+  .name_and_user_descrption {
+  flex-direction: column;
+  display: flex;
+  margin-left: 17px;
+  }
+  
+  .fullname_user_prof{
+  
+  font-size: 30px;
+  
+  }
+  .username {
+  font-size: 14px;
+  }
+  
+  .bio_user{
+    margin-top: 10px;
+  }
+  .btns_follow_msg {
+    padding-top: 60px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  }
+  
+  .btns_follow_msg button {
+  /* background-color: rgb(19, 161, 161); */
+  background-color: cornflowerblue;
+  outline: none;
+  border: none;
+  color: #fff;
+  height: 40px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 1px px 2.5px rgba(224, 216, 216, 0.849);
+  }
+  
+  .btns_follow_msg button:hover {
+  /* background: var(--event); */
+  transform: scale(0.98);
+  background-color: rgb(115, 151, 218);
+  }
+  
+  
+  .btns_follow_msg button svg{
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+  }
+  
+  .btn_msg_to{
+  
+  width: 90px;
+  }
+  .btn_follow{
+  width: 135px;
+  overflow: hidden;
+  }
+  
+  
+  .state_follower{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  }
+  
+  .state_following{
+  display: none;
+  }
+  
+  
+  .btn_follow.active .state_follower{
+  display: none;
+  }
+  
+  .btn_follow.active .state_following{
+  display: inline;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #44b34c;
+  }
+  
+  
+  
+  
+  
+  /* content_profile */
+  .content_profile{
+  /* height: 700px; */
+  display: flex;
+  margin-top: 20px;
+  
+  
+  
+  }
+  
+  
+  
+  
+  
+  
+  .side_prof_info_user{
+  
+  height: 450px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+  
+  
+  
+  .bowl_line_info{
+  margin-top: 5px;
+  background-color: var( --d-1);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  color: var(--text);
+  }
+
+  
+body.dark .bowl_line_info{
+  background-color: var( --d-1);
+  color: var(--text);
+
+}
+  
+  .bowl_line_info svg{
+  width:30px;
+  height: 30px;
+  }
+  
+  .bowl_line_info span{
+  font-size: 20px;
+  margin-left: 10px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .side_prof_posts_user{
+  /* background-color: rgb(78, 38, 189); */
+  /* height: 100%; */
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  }
+  
+  
+  
+.svg_gay{
+  display: none;
+}
+.svg_male{
+  display: none;
+}
+.svg_female{
+  display: none;
+}
+
+.svg_gay.active{
+  display: inline;
+}
+.svg_male.active{
+  display: inline;
+}
+.svg_female.active{
+  display: inline;
+}
+
+
+
+
+
+
+
+
+

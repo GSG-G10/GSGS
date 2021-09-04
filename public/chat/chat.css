@@ -1,0 +1,224 @@
+
+
+body{
+    overflow: hidden;
+}
+.container_chat{
+    width: 900px;
+    height: 100vh;
+    margin: 0 auto;
+    }
+    
+    
+    
+    
+    
+    .content_all_msg{
+    height: calc(100% - 70px);
+    overflow: auto;
+    margin-bottom: 5px;
+    }
+    
+    
+    .content_all_msg::-webkit-scrollbar{
+        width: 8px;
+    }
+    
+    .content_all_msg::-webkit-scrollbar-track{
+        box-shadow:inset 0 0 1px rgba(0, 0, 0, 0.5);
+    }
+    
+    .content_all_msg::-webkit-scrollbar-thumb{
+        background: rgb(150, 149, 149);
+        border-radius: 50px;
+    }
+    
+    
+    
+    .user_send{
+        display: flex;
+        align-items: center;
+        background: rgb(206, 206, 206);
+        padding: 5px;
+        border-radius: 4px;
+        margin-top: 5px;
+        animation: movePlace 0.4s ease-in-out;
+}
+    
+
+@keyframes movePlace{
+    0%{
+        transform: translateY(50px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+    
+    
+    .avatar_user_ch img{
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+    border-radius: 50%;
+    }
+    
+    
+    .username_ch a{
+        margin-left: 7px;
+    font-size: 18px;
+    text-decoration: none;
+        color: #000;
+    }
+    
+    
+    
+    .content_msg{
+        padding: 7px;
+        padding-left: 20px;
+        width: 780px;
+        overflow: hidden;
+        }
+        
+        
+        .content_msg span{
+            overflow-wrap: break-word;
+        }
+        
+        
+        
+        
+
+        
+    .timeMsg{
+        font-size: 12px;
+        margin-left: 3px;
+    }
+    
+    
+    /* add_comment_to_post */
+    .bowl_send_msg{
+        display: flex;
+        position: relative;
+        align-items: center;
+        background: rgb(216, 216, 216);
+        height: 70px;
+        }
+        
+        
+    .input_write_comment{
+        width: calc(100% - 50px);
+        padding: 3px;
+        position: relative;
+        }
+        
+        
+        .textarea_comment{
+            position: absolute;
+        width: 100%;
+        resize: none;
+        min-height:40px;
+        height:40px;
+        max-height: 150px;
+        outline: none;
+        padding: 8px;
+        padding-right: 50px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #bfbfbf;
+        transition: all 0.3s ease-in-out;
+        overflow: hidden;
+        bottom: -20px;
+        }
+        
+        .send_comment_to_post{
+        width:50px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+        .send_comment_to_post svg{
+        width:35px;
+        height:35px;
+        cursor: pointer;
+        }
+        
+        
+        
+        
+        .tool_for_msgs_Chat{
+        position: absolute;
+        bottom: -15px;
+        right: 7px;
+        background: rgb(212, 212, 212);
+        width: 70px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 4px;
+        }
+        
+        
+        .tool_for_msgs_Chat svg{
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+.broadcast{
+position: absolute;
+top: -17px;
+left: 5px;
+padding: 5px;
+align-items: center;
+z-index: 50;
+border-radius: 20px;
+background: rgb(158, 158, 158);
+    display: flex;
+    display: none;
+}    
+
+.broadcast.active{
+    display: flex;
+}
+
+
+.cast_user{
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.point_cast{
+    width: 7px;
+    height:7px;
+    margin-left: 3px;
+    border-radius: 50%;
+    background-color: rgb(53, 53, 53);
+    animation: loderWriten 0.7s  ease-in-out infinite;
+    animation-delay: calc( 0.1s * var(--i));
+}
+
+
+@keyframes loderWriten{
+
+0%{transform: translateY(3px);}
+20%{transform: translateY(2px);}
+40%{transform: translateY(1px);}
+50%{transform: translateY(0px);}
+70%{transform: translateY(-1px);}
+90%{transform: translateY(-2px);}
+100%{transform: translateY(-3px);}
+
+}

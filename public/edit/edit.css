@@ -1,0 +1,644 @@
+
+
+.my_profile{
+    width: 80%;
+    margin: 15px auto;
+    }
+    
+    .head_profile {
+    height: 380px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    }
+    
+    .back_img_profile {
+    width: 100%;
+    height: 100%;
+    }
+    
+    .back_img_profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    }
+    
+    .info_front_head {
+    position: absolute;
+    
+    width: 100%;
+    height: 200px;
+    bottom: 0px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    }
+    
+    ._info_user_profile {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    }
+    
+    .avatar_user {
+    overflow: hidden;
+    position: relative;
+    width: 170px;
+    border-radius: 50%;
+    height: 170px;
+    }
+    .avatar_user img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+    border-radius: 50%;
+    border: 5px solid var(--event);
+    
+    object-fit: cover;
+    cursor: pointer;
+    }
+    
+    .name_and_user_descrption {
+    flex-direction: column;
+    display: flex;
+    margin-left: 17px;
+    }
+    
+    .fullname_user_prof{
+    
+    font-size: 30px;
+    
+    }
+    .username {
+    font-size: 14px;
+    }
+    
+    .bio_user{
+    margin-top: 10px;
+    }
+    .btns_follow_msg {
+    padding-top: 60px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    }
+    
+    .btns_follow_msg button {
+    /* background-color: rgb(19, 161, 161); */
+    background-color: cornflowerblue;
+    outline: none;
+    border: none;
+    color: #fff;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 1px px 2.5px rgba(224, 216, 216, 0.849);
+    }
+    
+    .btns_follow_msg button:hover {
+    /* background: var(--event); */
+    transform: scale(0.98);
+    background-color: rgb(115, 151, 218);
+    }
+    
+    
+    .btns_follow_msg button svg{
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+    }
+    
+    .btn_msg_to{
+    
+    width: 90px;
+    }
+    .btn_follow{
+    width: 135px;
+    
+    }
+    
+    
+    .state_follower{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    }
+    
+    .state_following{
+    display: none;
+    }
+    
+    
+    .btn_follow.active .state_follower{
+    display: none;
+    }
+    
+    .btn_follow.active .state_following{
+    display: inline;
+    }
+    
+    
+    
+    
+    
+    /* content_profile */
+    .content_profile{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 70px;
+    padding-bottom: 70px;
+    }
+    
+    .side_prof_info_user{
+    
+    height: 450px;
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    
+    
+    .bowl_line_info{
+        overflow: hidden;
+    margin-top: 5px;
+    background-color: rgb(209, 209, 209);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 5px;
+    }
+    
+    
+    
+    .title_line_info{
+    display: flex;
+    align-items: center;
+    }
+    
+    .bowl_line_info svg{
+    width:30px;
+    height: 30px;
+    }
+    
+    .bowl_line_info span{
+    font-size: 20px;
+    margin-left: 10px;
+    }
+    
+    .send_save_edit,
+    .input_kind_sel input,
+    .select_option_gender,
+    .input_birthday input,
+    .select_option_country{
+    padding: 5px 12px;
+    border-radius: 4px;
+    outline: none;
+    font-size: 18px;
+    border: none;
+    }
+    
+    
+    .input_hobbies textarea,
+    .msg_bio textarea{
+    height: 40px;
+    overflow: hidden;
+    resize: none;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    width: 450px;
+    padding: 8px;
+    font-size: 16px;
+    }
+    
+    
+    
+    .btn_edit_background{
+    background-color: rgba(10, 10, 10, 0.527);
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 20px;
+    right: 10px;
+    color: #fff;
+    top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    }
+    
+    .edit_avatar svg,
+    .btn_edit_background svg{
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+    }
+    
+    
+    .edit_avatar{
+    cursor: pointer;
+    background-color: rgba(8, 8, 8, 0.678);
+    width: 100%;
+    height:50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    }
+    
+    
+    .bowl_line_save{
+    width: 80%; 
+    margin: 10px auto;
+    }
+    
+    
+    .send_save_edit{
+    height: 45px;
+    width: 100%;
+    background-color: rgb(124, 177, 72);
+    color: #fff;
+    cursor: pointer;
+    font-size: 22px;
+    
+    }
+    
+    
+    .send_save_edit:hover{
+    background-color: rgb(154, 204, 105);
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /* add edit avatar */
+    /* ////////////////////// */
+    .pop_edit_avatar{
+    
+        background-color: rgb(255, 255, 255);
+        width: 550px;
+        position: fixed;
+        top: 50%;
+        border-radius: 5px;
+        box-shadow: var(--shdw2);
+        left:  50%;
+        transform: translate(-50%, -50%);
+        /* transition: all 0.4s ease-in-out; */
+        overflow: hidden;
+        animation: openPopAvatar 0.4s ease-in-out;
+        }
+        
+        @keyframes openPopAvatar{
+            0%{
+                width: 0px;
+                opacity: 0;
+            }
+            100%{
+                width: 550px;
+                opacity: 1;
+    
+            }
+        }
+        
+        .head_pop_avatar{
+        
+        height: 88%;
+        
+        }
+        
+        
+        
+        
+        .btns_edits{
+        display: flex;
+        height: 12%;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 60px;
+        }
+        
+        .btns_edits button{
+        
+        height: 45px;
+        width: 40%;
+        color: #fff;
+        cursor: pointer;
+        font-size: 22px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        transition: all 0.3s ease-in-out;
+        
+        }
+        
+        .edit_btn_avatar{
+        background-color: rgb(124, 177, 72);
+        
+        }
+        .edit_btn_avatar:hover{
+        background-color: rgb(140, 192, 88);
+        
+        }
+        
+        
+        .cancel_btn_avatar{
+        background-color: rgb(177, 72, 72);
+        
+        }
+        .cancel_btn_avatar:hover{
+        background-color: rgb(194, 89, 89);
+        
+        }
+        
+        
+        
+        .area_upload_image{
+        padding: 5px;    
+        }
+        
+        .file_image_up_avatar{
+        display: none;
+        }
+        
+        .label_image_up_avatar{
+        cursor: pointer;
+        width: 100%;
+        background-color: cornflowerblue;
+        display: block;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px;
+        color: #000;
+        font-size: 22px;
+        border: 2px dashed red;
+        }
+        
+        
+        
+        .area_view_avatar{
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+        
+        .area_view_avatar img{
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px dashed red;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    /* add edit background */
+    /* ////////////////////// */
+    .pop_edit_background{
+    
+        background-color: rgb(255, 255, 255);
+        width: 550px;
+        position: fixed;
+        top: 50%;
+        border-radius: 5px;
+        box-shadow: var(--shdw2);
+        left:  50%;
+        transform: translate(-50%, -50%);
+            
+        overflow: hidden;
+        animation: openPopBackg 0.4s ease-in-out;
+        }
+        
+    
+        @keyframes openPopBackg{
+            0%{
+                width: 0px;
+                opacity: 0;
+            }
+            100%{
+                width: 550px;
+                opacity: 1;
+    
+            }
+        }
+    
+        .head_pop_background{
+        
+        height: 88%;
+        
+        }
+        
+        
+        
+        
+        .btns_edits{
+        display: flex;
+        height: 12%;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 60px;
+        }
+        
+        .btns_edits button{
+        
+        height: 45px;
+        width: 40%;
+        color: #fff;
+        cursor: pointer;
+        font-size: 22px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        transition: all 0.3s ease-in-out;
+        
+        }
+        
+        .edit_btn_background{
+        background-color: rgb(124, 177, 72);
+        
+        }
+        .edit_btn_background:hover{
+        background-color: rgb(140, 192, 88);
+        
+        }
+        
+        
+        .cancel_btn_background{
+        background-color: rgb(177, 72, 72);
+        
+        }
+        .cancel_btn_background:hover{
+        background-color: rgb(194, 89, 89);
+        
+        }
+        
+        
+        
+        .area_upload_image{
+        padding: 5px;    
+        }
+        
+        .file_image_up_background{
+        display: none;
+        }
+        
+        .label_image_up_background{
+        cursor: pointer;
+        width: 100%;
+        background-color: cornflowerblue;
+        display: block;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px;
+        color: #000;
+        font-size: 22px;
+        border: 2px dashed red;
+        }
+        
+        
+        
+        .area_view_background{
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        }
+        
+        .area_view_background img{
+        width: 100%;
+        height: 250px;
+        border-radius: 5px;
+        object-fit: cover;
+        border: 2px dashed red;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+    .pop_edit_avatar{
+    display: none;
+    }
+    .pop_edit_background{
+    display: none;
+    }
+    
+    
+    .pop_edit_avatar.active{
+    display: inline;
+    }
+    .pop_edit_background.active{
+    display: inline;
+    }
+    
+    
+    .bowl_error_inputs{
+        text-align: center;
+        width: 100%;
+        margin-top: 5px;
+        font-size: 20px;
+        border-radius: 5px;
+        color: #fff;
+        padding: 4px;
+        background-color: rgb(209, 74, 74);
+        animation: errorINputs 0.4s ease-in-out;
+        display: none;
+    }
+    
+    .bowl_error_inputs.error{
+        display: inline;
+    
+    
+    }
+    
+    @keyframes errorINputs{
+        0%{transform: translateX(-15px);}
+        10%{transform: translateX(15px);}
+        20%{transform: translateX(-15px);}
+        30%{transform: translateX(15px);}
+        40%{transform: translateX(-15px);}
+        50%{transform: translateX(15px);}
+        60%{transform: translateX(-15px);}
+        70%{transform: translateX(15px);}
+        80%{transform: translateX(-15px);}
+        90%{transform: translateX(15px);}
+        100%{transform: translateX(-15px);}
+    }
+    
+    
+    
+    
+    
