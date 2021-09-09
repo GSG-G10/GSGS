@@ -42,5 +42,12 @@ CREATE TABLE chat(
 );
 
 
+CREATE TABLE gif(
+    id SERIAL PRIMARY KEY,
+    src TEXT NOT NULL,
+    category TEXT NOT NULL,
+    prpo TEXT NOT NULL
+);
+
 SET client_encoding TO 'UTF8';
 COMMIT;

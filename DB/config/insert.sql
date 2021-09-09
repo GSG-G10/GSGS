@@ -22,9 +22,9 @@ SELECT count(*) FROM chat;
 
 
 
+select * from luffy_posts;
 select * from jowexec_posts;
-select * from lol_posts;
-select * from pelizatiji_posts;
+select * from mostafa_posts;
 select * from users;
 select * from profiles;
 select * from comments_id_post;

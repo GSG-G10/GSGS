@@ -148,6 +148,7 @@ fetch(`/profile/count/`)
 
 // get posts -------------------
 const side_prof_posts_user =document.querySelector('.side_prof_posts_user')
+let moreLoad = true
 let page = 0
 console.log(page);
 callPostsProfile(page)
@@ -156,7 +157,7 @@ callPostsProfile(page)
 
 window.addEventListener('scroll',()=>{
     const {scrollTop, scrollHeight, clientHeight} = document.documentElement
-    if(clientHeight + scrollTop >= scrollHeight - 20){
+    if((clientHeight + scrollTop >= scrollHeight - 20 && moreLoad === true)){
         window.scrollTo({
             top: scrollHeight - 200,
             behavior: 'smooth'
@@ -173,7 +174,11 @@ function callPostsProfile(page){
             return data.json()
         })
         .then(data =>{
-            console.log(data);
+
+            if(data.moreLoad === false){
+                moreLoad = false
+            } else {
+
                 let content = ``
                 if(data.video_con){
                     content = `
@@ -302,6 +307,8 @@ function callPostsProfile(page){
             autoHeightText()
             likedTest()
             getOldComments(data.id_comments)
+    
+        }
     
     }).catch(console.log)
 }

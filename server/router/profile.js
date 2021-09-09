@@ -29,6 +29,7 @@ profile.get('/posts/:page', (req, res)=>{
         res.json(data)
         }else{
            console.log({msg: "no posts more x sory"})
+           res.json({moreLoad: false})
         }
     })
     .catch(err =>{

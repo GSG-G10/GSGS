@@ -24,7 +24,7 @@ const random = require('./router/random')
 const likes = require('./router/likes')
 const comments = require('./router/comments')
 const seeting = require('./router/setting-post')
-
+const gifRoute = require('./router/gif')
 
 app.use(cookieParser());
 app.use(express.json());
@@ -46,6 +46,7 @@ app.use('/profile', authToken,  profile)
 app.use('/likes', authToken,  likes)
 app.use('/comments', authToken,  comments)
 app.use('/setting', authToken,  seeting)
+app.use('/gif', authToken,  gifRoute)
 
 app.use(express.static(path.join(__dirname, "..", "storge")));
 app.use(express.static(path.join(__dirname, "..", "public"), { maxAge: "30d" }));
@@ -62,6 +63,7 @@ app.use(express.static(path.join(__dirname, "..", "DB"), { maxAge: "30d" }));
         res.redirect('/')
         return;
     }
+
 
     jwt.verify(token, process.env.SECRET,async (err, user)=>{
         if(err) {

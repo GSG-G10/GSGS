@@ -39,6 +39,7 @@ sio.on('connection', (visitor) => {
         }
         
         setChatMsg(newData)
+
         getAvatar(newData.userSend)
         .then(data =>{
 
@@ -52,6 +53,35 @@ sio.on('connection', (visitor) => {
 
         
  
+    visitor.on('addGif', data=>{
+        let datey = new Date()
+        let allDate = `${datey.getDate()}/${datey.getMonth()+1}/${datey.getFullYear()}`
+        let allTime = `${datey.getHours()}:${datey.getMinutes()+1}`
+        let stateDay = ''
+        if(datey.getHours() >= 0 && datey.getHours() <= 12){
+          stateDay = 'am'
+        }else{
+          stateDay = 'pm'
+        }
+        
+        let newData = {
+          date: allDate,
+          time: allTime,
+          stateDay: stateDay,
+          userSend: data.userSend,
+          msgContent: `gif@${data.gifSrc}`,
+        }
+        
+        setChatMsg(newData)
+        
+        getAvatar(newData.userSend)
+        .then(data =>{
+          sio.sockets.emit('setGif', {...newData, ...data.rows[0]})
+        }).catch(console.log)
+
+    })
+
+
 
 
 })

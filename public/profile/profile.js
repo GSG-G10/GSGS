@@ -28,7 +28,6 @@ fetch('/edit/getinfo')
     bio_user.textContent = data.bio
      select_option_country.textContent = data.country
      birthday_date.textContent = data.birthday
-     
         if(data.gender == 'male'){
             svg_male.classList.add('active')
         }
@@ -92,81 +91,28 @@ fetch(`/profile/count/`)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // get posts -------------------
 const side_prof_posts_user =document.querySelector('.side_prof_posts_user')
+let moreLoad = true
 let page = 0
 console.log(page);
 callPostsProfile(page)
 page++
+console.log(page);
 callPostsProfile(page)
 
 window.addEventListener('scroll',()=>{
     const {scrollTop, scrollHeight, clientHeight} = document.documentElement
-    if(clientHeight + scrollTop >= scrollHeight - 20){
+    if((clientHeight + scrollTop >= scrollHeight - 20 && moreLoad === true)){
         window.scrollTo({
             top: scrollHeight - 200,
             behavior: 'smooth'
           });
         page++
+        console.log(page);
         callPostsProfile(page)
     }
 })
-
 
 function callPostsProfile(page){
         fetch(`/profile/posts/${page}`)
@@ -175,6 +121,9 @@ function callPostsProfile(page){
         })
         .then(data =>{
             console.log(data);
+            if(data.moreLoad === false){
+                moreLoad = false
+            } else{
                 let content = ``
                 if(data.video_con){
                     content = `
@@ -252,31 +201,27 @@ function callPostsProfile(page){
                     </div>
 
                     
-<div class="option_post">
-    <svg class="svg_pop_option_post" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 426.667 426.667" style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve"> <g> <g> <circle cx="42.667" cy="213.333" r="42.667"/> </g> </g> <g> <g> <circle cx="213.333" cy="213.333" r="42.667"/> </g> </g> <g> <g> <circle cx="384" cy="213.333" r="42.667"/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
-        <div class="bowl_option" data-id_post_option="${data.id_post}">
-            <div class="btn_Select_option delete_post">
-                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 384 384" style="enable-background:new 0 0 384 384;" xml:space="preserve"> <g> <g> <g> <path d="M64,341.333C64,364.907,83.093,384,106.667,384h170.667C300.907,384,320,364.907,320,341.333v-256H64V341.333z"/> <polygon points="266.667,21.333 245.333,0 138.667,0 117.333,21.333 42.667,21.333 42.667,64 341.333,64 341.333,21.333 			"/> </g> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
-                <span>Delete</span>
-            </div>
-            <div class="btn_Select_option edit_post">
-                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 348.882 348.882" style="enable-background:new 0 0 348.882 348.882;" xml:space="preserve"> <g> <path d="M333.988,11.758l-0.42-0.383C325.538,4.04,315.129,0,304.258,0c-12.187,0-23.888,5.159-32.104,14.153L116.803,184.231 c-1.416,1.55-2.49,3.379-3.154,5.37l-18.267,54.762c-2.112,6.331-1.052,13.333,2.835,18.729c3.918,5.438,10.23,8.685,16.886,8.685 c0,0,0.001,0,0.001,0c2.879,0,5.693-0.592,8.362-1.76l52.89-23.138c1.923-0.841,3.648-2.076,5.063-3.626L336.771,73.176 C352.937,55.479,351.69,27.929,333.988,11.758z M130.381,234.247l10.719-32.134l0.904-0.99l20.316,18.556l-0.904,0.99 L130.381,234.247z M314.621,52.943L182.553,197.53l-20.316-18.556L294.305,34.386c2.583-2.828,6.118-4.386,9.954-4.386 c3.365,0,6.588,1.252,9.082,3.53l0.419,0.383C319.244,38.922,319.63,47.459,314.621,52.943z"/> <path d="M303.85,138.388c-8.284,0-15,6.716-15,15v127.347c0,21.034-17.113,38.147-38.147,38.147H68.904 c-21.035,0-38.147-17.113-38.147-38.147V100.413c0-21.034,17.113-38.147,38.147-38.147h131.587c8.284,0,15-6.716,15-15 s-6.716-15-15-15H68.904c-37.577,0-68.147,30.571-68.147,68.147v180.321c0,37.576,30.571,68.147,68.147,68.147h181.798 c37.576,0,68.147-30.571,68.147-68.147V153.388C318.85,145.104,312.134,138.388,303.85,138.388z"/> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
-                <span>Edit</span>
-            </div>
-        </div>
+                <div class="option_post">
+                    <svg class="svg_pop_option_post" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 426.667 426.667" style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve"> <g> <g> <circle cx="42.667" cy="213.333" r="42.667"/> </g> </g> <g> <g> <circle cx="213.333" cy="213.333" r="42.667"/> </g> </g> <g> <g> <circle cx="384" cy="213.333" r="42.667"/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+                        <div class="bowl_option" data-id_post_option="${data.id_post}">
+                            <div class="btn_Select_option delete_post">
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 384 384" style="enable-background:new 0 0 384 384;" xml:space="preserve"> <g> <g> <g> <path d="M64,341.333C64,364.907,83.093,384,106.667,384h170.667C300.907,384,320,364.907,320,341.333v-256H64V341.333z"/> <polygon points="266.667,21.333 245.333,0 138.667,0 117.333,21.333 42.667,21.333 42.667,64 341.333,64 341.333,21.333 			"/> </g> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+                                <span>Delete</span>
+                            </div>
+                            <div class="btn_Select_option edit_post">
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 348.882 348.882" style="enable-background:new 0 0 348.882 348.882;" xml:space="preserve"> <g> <path d="M333.988,11.758l-0.42-0.383C325.538,4.04,315.129,0,304.258,0c-12.187,0-23.888,5.159-32.104,14.153L116.803,184.231 c-1.416,1.55-2.49,3.379-3.154,5.37l-18.267,54.762c-2.112,6.331-1.052,13.333,2.835,18.729c3.918,5.438,10.23,8.685,16.886,8.685 c0,0,0.001,0,0.001,0c2.879,0,5.693-0.592,8.362-1.76l52.89-23.138c1.923-0.841,3.648-2.076,5.063-3.626L336.771,73.176 C352.937,55.479,351.69,27.929,333.988,11.758z M130.381,234.247l10.719-32.134l0.904-0.99l20.316,18.556l-0.904,0.99 L130.381,234.247z M314.621,52.943L182.553,197.53l-20.316-18.556L294.305,34.386c2.583-2.828,6.118-4.386,9.954-4.386 c3.365,0,6.588,1.252,9.082,3.53l0.419,0.383C319.244,38.922,319.63,47.459,314.621,52.943z"/> <path d="M303.85,138.388c-8.284,0-15,6.716-15,15v127.347c0,21.034-17.113,38.147-38.147,38.147H68.904 c-21.035,0-38.147-17.113-38.147-38.147V100.413c0-21.034,17.113-38.147,38.147-38.147h131.587c8.284,0,15-6.716,15-15 s-6.716-15-15-15H68.904c-37.577,0-68.147,30.571-68.147,68.147v180.321c0,37.576,30.571,68.147,68.147,68.147h181.798 c37.576,0,68.147-30.571,68.147-68.147V153.388C318.85,145.104,312.134,138.388,303.85,138.388z"/> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+                                <span>Edit</span>
+                            </div>
+                        </div>
 
-        <div class="Pop_edit_text_post pop_edit_${data.id_post}">
-            <textarea name="" class="bowl_edit_${data.id_post}" placeholder="enter your new text.."></textarea>
-            <div class="bowl_btns_edits">
-                <button class="btn_cancle_edit  btn_cancle_${data.id_post}">Cancle</button>
-                <button class="btn_save_edit btn_save_${data.id_post}" >Save</button>
-            </div>
-        </div>
-
-
-</div>
-
-
+                        <div class="Pop_edit_text_post pop_edit_${data.id_post}">
+                            <textarea name="" class="bowl_edit_${data.id_post}" placeholder="enter your new text.."></textarea>
+                            <div class="bowl_btns_edits">
+                                <button class="btn_cancle_edit  btn_cancle_${data.id_post}">Cancle</button>
+                                <button class="btn_save_edit btn_save_${data.id_post}" >Save</button>
+                            </div>
+                        </div>
+                </div>
 
                 </div>
     
@@ -334,6 +279,8 @@ function callPostsProfile(page){
             removePost()
             editPost()
             openPopOption()
+        }
+    
     }).catch(console.log)
 }
 
@@ -342,7 +289,6 @@ function openPopOption(){
 
     svg_pop_option_post.forEach(pop =>{
         pop.addEventListener('click', ()=>{
-            console.log(pop.parentElement.children[1]);
             let popClass = pop.parentElement.children[1]
             popClass.classList.toggle('active')
         })
@@ -353,10 +299,8 @@ function openPopOption(){
 
 function editPost(){
     const edit_post = document.querySelectorAll('.edit_post')
-
     edit_post.forEach(edit=>{
         edit.addEventListener('click', ()=>{
-
             let id_post = edit.parentElement.getAttribute('data-id_post_option')
             let pop_edit = document.querySelector(`.pop_edit_${id_post}`)
             let contentText = document.querySelector(`.bowl_edit_${id_post}`)
@@ -416,9 +360,6 @@ function removePost(){
     })
 
 }
-
-
-
 
 
 function autoHeightText(){
@@ -517,6 +458,12 @@ function likedTest(){
     icon_React_like.forEach(post =>{
         post.addEventListener('click', ()=>{
 
+            post.parentElement.parentElement.children[0].children[0].classList.add('react')
+            setTimeout(()=>{
+                post.parentElement.parentElement.children[0].children[0].classList.remove('react')
+            },500)
+
+
             let username = post.getAttribute('data-username')
             let id_post = post.getAttribute('data-id_post')
             let stateLike = post.getAttribute('data-like')
@@ -572,6 +519,13 @@ function likedTest(){
 
     icon_React_dislike.forEach(post =>{
         post.addEventListener('click', ()=>{
+
+            post.parentElement.parentElement.children[1].children[0].classList.add('react')
+            setTimeout(()=>{
+                post.parentElement.parentElement.children[1].children[0].classList.remove('react')
+            },500)
+
+            
             let username = post.getAttribute('data-username')
             let id_post = post.getAttribute('data-id_post')
             let stateLike = post.getAttribute('data-dislike')
@@ -629,7 +583,7 @@ function getOldComments(id_comments){
         return data.json()
     })
     .then(data =>{
-        console.log(data);
+        // console.log(data);
         // res.json(data)
         
         let contentComments = document.querySelector(`.content_old_${id_comments}`);

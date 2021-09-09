@@ -15,11 +15,14 @@ overflow: hidden;
 .back_img_profile {
 width: 100%;
 height: 100%;
+
 }
 
 .back_img_profile img {
 width: 100%;
 height: 100%;
+object-fit: cover;
+object-position: top;
 }
 
 .info_front_head {

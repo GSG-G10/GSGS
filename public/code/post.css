@@ -151,21 +151,22 @@ overflow: hidden;
     
     
     
-    
-    .tool_for_comment{
-    position: absolute;
-    bottom: 11px;
-    right: 7px;
-    background: var(--hoverTag);
-    width: 70px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 4px;
-    }
-    
-    
+
+.tool_for_comment{
+position: absolute;
+bottom: 11px;
+right: 7px;
+background: var(--hoverTag);
+width: 70px;
+height: 30px;
+display: flex;
+align-items: center;
+justify-content: space-around;
+border-radius: 4px;
+}
+
+
+        
     .tool_for_comment svg{
     width: 20px;
     height: 20px;
@@ -173,10 +174,12 @@ overflow: hidden;
     }
     
     
+    body.dark .tool_for_comment svg{
     
+    fill: var(--fillSvg);
     
-    
-    
+    }
+
     
     
     
@@ -221,6 +224,23 @@ cursor: pointer;
 flex-direction: column;
 }
 
+.icon_React.react{
+    animation: reactPost 0.4s ease-in-out;
+}
+
+@keyframes reactPost{
+
+    0%{
+        transform: scale(1.07) rotate(7deg);
+    }
+    50%{
+        transform: scale(1.12) rotate(-7deg);
+    }
+    100%{
+        transform: scale(1) rotate(0deg);
+    }
+
+}
 
 
 
