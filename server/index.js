@@ -1,13 +1,14 @@
-const {server} = require("./app.js");
+const {server, app} = require("./app.js");
 const socket = require("socket.io");
 const setChatMsg = require("../DB/queries/set-chat-msg");
 const getAvatar = require("../DB/queries/get-avatar");
 
 
-let serverSocket = server.listen(3000, () => {
+
+
+let serverSocket = server.listen(app.get('port'), () => {
   console.log(`App running http://localhost:3000`);
 });
-
 
 
 let sio = socket(serverSocket)

@@ -83,4 +83,6 @@ app.use(express.static(path.join(__dirname, "..", "DB"), { maxAge: "30d" }));
 }
 
 
-module.exports = {server};
+
+
+module.exports = {server, app};
