@@ -20,8 +20,8 @@ posts.get('/all/:page', async (req, res)=>{
     }
     else{
         let allPostGet = await getPost( idsPosts.rows[0].username, idsPosts.rows[0].id_post)
-        console.log('all: ' + Number(allPostGet.countAll));
-        console.log(Number(req.params.page));
+        // console.log('all: ' + Number(allPostGet.countAll));
+        // console.log(Number(req.params.page));
         if(Number(req.params.page) < Number(allPostGet.countAll)){
             res.json(allPostGet)
         }else{

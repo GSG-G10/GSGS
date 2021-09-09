@@ -78,6 +78,7 @@ edit.post('/background', (req, res)=>{
         let nameRandom = Math.random() * (99999999 - 0) + 0;
         let bigNumber =  dateSecond * nameRandom
         let fileNmae = `${bigNumber}.${typeFile}`
+        
         file.mv('./storge/backgrounds/' + fileNmae ,(err)=>{
             if(err){
                 console.log(err);

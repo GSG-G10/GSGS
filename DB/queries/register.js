@@ -68,6 +68,6 @@ const register = async (value) =>{
     await createTablePosts(value.username_register)
     await createTableFollowing(value.username_register)
     await createTableLikes(value.username_register)
-     await insertUserNew(value)
+    await insertUserNew(value)
 }
 module.exports = register;

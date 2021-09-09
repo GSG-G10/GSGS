@@ -22,6 +22,7 @@ SELECT count(*) FROM chat;
 
 
 
+select * from voquraw_likes;
 select * from luffy_posts;
 select * from jowexec_posts;
 select * from mostafa_posts;
@@ -33,7 +34,7 @@ select * from lorof_posts;
 select * from comments_44791796258951730000;
 UPDATE lorof_posts SET text_con = 'xxxxxxxxxxxxxxx' WHERE id_post= '23711472165555323000';
 
-select * from lorof_likes;
+select * from cykyno_likes;
 
 
 select * from lorof_posts where id_post = '26823482157553070000';

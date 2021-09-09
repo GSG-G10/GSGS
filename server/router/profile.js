@@ -16,7 +16,6 @@ profile.get('/count/', (req, res)=>{
     .catch(err =>{
         console.log(err);
     })
-
 })
 
 

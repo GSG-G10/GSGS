@@ -169,7 +169,7 @@ window.addEventListener('scroll',()=>{
 
 
 function callPostsProfile(page){
-        fetch(`/profile/posts/${page}`)
+        fetch(`/page/posts/${page}/${userPageView}`)
         .then(data => {
             return data.json()
         })
