@@ -75,7 +75,6 @@ nav.innerHTML = `
 </div>
 
 
-
 <!-- pop_create_add -->
 <div class="pop_create_add">
     <form action="/posts/new" method="POST" enctype="multipart/form-data">
@@ -93,7 +92,6 @@ nav.innerHTML = `
                 </div>
             </div>
         </div>
-
         <div class="media_upload_post_add">
             <div class="add_img_content">
                 <img class="image_View_pop_add" src="" alt="">
@@ -180,11 +178,23 @@ btn_chat.addEventListener('click', ()=>{
     location.assign('/chat')
 })
 
-
+console.log(localStorage.getItem('dark'));
+if(localStorage.getItem('dark') === 'on'){
+    document.querySelector('body').classList.add('dark')
+}
 
 bowl_dark_mode.addEventListener('click', ()=>{
-
     document.querySelector('body').classList.toggle('dark')
+
+    if(localStorage.getItem('dark') === 'on'){
+        localStorage.setItem('dark', 'off')
+console.log(localStorage.getItem('dark'));
+}else{
+        localStorage.setItem('dark', 'on')
+console.log(localStorage.getItem('dark'));
+}
+
+
 })
 
 // console.log("ara sockets");

@@ -91,9 +91,6 @@ btn_upload_images.addEventListener('click',event=>{
 
 
 
-
-
-
 const btn_upload_videos = document.querySelector('.btn_upload_videos')
 const input_upload_Video = document.querySelector('.input_upload_Video')
 
